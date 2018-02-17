@@ -19,8 +19,8 @@ Use any SQLite client. I prefer [DB Browser for SQLite](http://sqlitebrowser.org
 
 ## FAQ
 
-- Why did you make this?
--- I made this so that I can be better about keeping in touch with people (especially those I don't see often). I'm planning to turn it into a touchscreen and put somewhere in the house.
+- **Why did you make this?**
+I made this so that I can be better about keeping in touch with people (especially those I don't see often). I'm planning to turn it into a touchscreen and put somewhere in the house.
 
-- Doesn't [insert social media app name] already do this?
--- Not exactly. Facebook nudges you toward communicating with particular contacts for its own commercial gain. I don't blame them for this, but I want a simple, straightward sorting algorithm based on time.
+- **Doesn't [insert social media app name] already do this?**
+Not exactly. Facebook nudges you toward communicating with particular contacts for its own commercial gain. I don't blame them for this, but I want a simple, unbiased sorting algorithm.
