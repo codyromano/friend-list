@@ -1,0 +1,9 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS `friend_list` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`name`	TEXT UNIQUE,
+	`relationship`	TEXT,
+	`lastCatchUpTime`	NUMERIC,
+	`avatarImageType`	NUMERIC
+);
+COMMIT;

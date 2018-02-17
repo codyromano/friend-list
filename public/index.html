@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>Friend list</title>
+  <link rel="stylesheet" href="./styles/main.css" type="text/css" />
+</head>
+<body>
+
+<main>
+  <div class="grid-row centered-content">
+    <h1>Reconnect with old friends</h1>
+  </div>
+
+  <div class="friend-list">
+    <p>You have no friends.</p>
+  </div>
+</main>
+
+<script type="text/template" id="friend-row-template">
+  <section class="grid-row friend centered-content">
+    <div class="grid-col">
+      <div class="image-thumb avatar avatar-{avatarImageType}"></div>
+    </div>
+    <div class="grid-col friend-info-container">
+      <h1 class="friend-name">{name}</h1>
+      <span>{relationship}</span>
+    </div>
+    <div class="grid-col">
+      <button data-friend-id="{id}" class="button-small catch-up">Catch up</button>
+    </div>
+  </section>
+</script>
+
+<script src="./script/Dispatcher.js"></script>
+<script src="./script/FriendListController.js"></script>
+<script src="./script/FriendListModel.js"></script>
+
+<script>
+const appRoot = document.querySelector('main');
+const friendListRoot = document.querySelector('.friend-list');
+const dispatcher = new Dispatcher(appRoot);
+
+const controller = new FriendListController(appRoot, dispatcher);
+const model = new FriendListModel(dispatcher);
+
+const generateModelViewFactory = (template) => (model) => {
+  let html = template;
+
+  for (const [key, value] of Object.entries(model)) {
+    const replaceKey = new RegExp(`{${key}}`, 'ig');
+    html = html.replace(replaceKey, value); 
+  }
+
+  return html;
+};
+
+const generateFriendView =  generateModelViewFactory(
+  document.getElementById('friend-row-template').innerHTML
+);
+// Render the friends list when new data is available
+dispatcher.subscribe(Dispatcher.prototype.ACTION_NEW_FRIEND_DATA, (friends) => {
+  friendListRoot.innerHTML = friends.map(
+    friend => generateFriendView(friend)
+  ).join('');
+});
+</script>
+
+</body>
+</html>

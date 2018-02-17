@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+html {
+  --max-content-width: 30rem;
+  --grid-row-padding: 2rem;
+  --grid-col-gutter: 1rem;
+
+  --friend-image-size: 4rem;
+
+  --font-size-small: 1rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 1.5rem;
+}
+
+/* Simple reset */
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.centered-content {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-row {
+  display: flex;
+  align-content: top;
+  padding-bottom: var(--grid-row-padding);
+}
+
+.grid-col {
+  align-items: top;
+  padding-right: var(--grid-col-gutter);
+}
+
+.image-thumb {
+  display: block;
+}
+
+.friend-info-container {
+  flex: 2;
+}
+
+.friend-name {
+  font-size: var(--font-size-large);
+}
+
+.avatar {
+  width: var(--friend-image-size);
+  height: var(--friend-image-size);
+  background: url('../images/avatars.jpg') no-repeat;
+  background-size: calc(var(--friend-image-size) * 8);
+}
+
+.avatar-1 {
+  background-position: calc(var(--friend-image-size) * -0.25)
+    calc(var(--friend-image-size) * -0.35);
+}
+
+.avatar-2 {
+  background-position: calc(var(--friend-image-size) * -1.35)
+    calc(var(--friend-image-size) * -0.35);
+}
+
+button, a {
+  background-color: rgb(16, 128, 98);
+  color: #fff;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  font-size: var(--font-size-medium);
+  padding: 0.5em;
+
+  opacity: 0.75;
+}
+
+button:hover, a:hover {
+  opacity: 1;
+}
+
+.button-small {
+  font-size: var(--font-size-small);
+}
+
+

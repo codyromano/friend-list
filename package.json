@@ -1,0 +1,23 @@
+{
+  "name": "friend-list",
+  "version": "1.0.0",
+  "description": "App for keeping in touch with distant friends from the past",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social",
+    "friends",
+    "history",
+    "personal"
+  ],
+  "author": "Cody Romano",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "sqlite": "^2.9.1"
+  }
+}
